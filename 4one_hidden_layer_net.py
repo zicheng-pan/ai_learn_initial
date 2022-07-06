@@ -15,7 +15,7 @@ def get_beans(counts):
     return xs, ys
 
 
-def sigmod(z):
+def sigmoid(z):
     return 1 / (1 + np.exp(-z))
 
 
@@ -38,11 +38,11 @@ b1_2 = np.random.rand()
 
 def forward_propgation(xs):
     z1_1 = w11_1 * xs + b1_1
-    a1_1 = sigmod(z1_1)
+    a1_1 = sigmoid(z1_1)
     z2_1 = w21_2 * xs + b2_1
-    a2_1 = sigmod(z2_1)
+    a2_1 = sigmoid(z2_1)
     z1_2 = w11_2 * a1_1 + w21_2 * a2_1 + b1_2
-    a1_2 = sigmod(z1_2)
+    a1_2 = sigmoid(z1_2)
     return a1_2, z1_2, a2_1, z2_1, a1_1, z1_1
 
 
